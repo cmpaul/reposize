@@ -1,0 +1,13 @@
+Alfresco Repository Size Dashlet
+
+This dashlet displays the size of the Alfresco Repository stores, indexes, index backups, and available disk space on the user's dashboard. It is broken down into two projects for the repository (a Java-backed webscript) and the Share dashlet files. 
+
+To deploy, configure build.properties for each project. The following ant targets will help you install the dashlet code:
+
+  1.) ant deploy - This will ZIP the required files for the project and unzip them on top of your exploded WAR.
+  2.) ant package-amp - This will create an Alfresco AMP file to be deployed as you see fit.
+  3.) ant install-amp - This will build the AMP and then deploy it to the server specified in build.properties.
+
+Any questions, please contact Chris Paul, cpaul@tribloom.com
+
+Enjoy!
