@@ -1,0 +1,6 @@
+<webscript>
+    <shortname>config-reposize-post</shortname>
+    <description>Configuration dialog for Repository Size dashlet</description>
+    <url>/reposize/config/{componentId}</url>
+    <format default="json">argument</format>
+</webscript>

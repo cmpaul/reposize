@@ -1,0 +1,5 @@
+<webscript>
+    <shortname>config-reposize</shortname>
+    <description>Configuration dialog for Reposize dashlet</description>
+    <url>/reposize/config</url>
+</webscript>

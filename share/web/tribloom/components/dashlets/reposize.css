@@ -1,0 +1,41 @@
+div.scrollable {
+    overflow: auto;
+}
+
+div.reposize-body {
+	background-image: url('/share/res/tribloom/components/dashlets/reposize-bg.png');
+	background-repeat: no-repeat;
+	background-position-y: 20px;
+	background-position-x: -10px;
+}
+
+table.reposize {
+	text-align: right;
+	width: 100%;
+	padding: 5px;
+}
+
+td.header {
+	border-bottom: 1px solid #CCC;	
+}
+
+select.reposize-refresh-interval {
+	width: 60px;
+}
+
+td.reposize-icon-column {
+	width: 48px;
+	vertical-align: top;
+}
+
+td.reposize-label-column {
+	width: 105px;
+}
+
+td.reposize-margin-column {
+	width: 5px;
+}
+
+td.reposize-value-column {
+	width: 100px;
+}

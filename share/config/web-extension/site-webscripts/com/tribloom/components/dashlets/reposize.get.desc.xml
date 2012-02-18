@@ -1,0 +1,6 @@
+<webscript>
+    <shortname>Repository Size</shortname>
+    <description>Dashlet that displays the size of the Alfresco repository file system</description>
+    <family>dashlet</family>
+    <url>/tribloom/components/dashlets/reposize</url>
+</webscript>

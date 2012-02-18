@@ -1,0 +1,8 @@
+<webscript>
+	<shortname>Repo Size</shortname>
+	<description>Calculates the repository disk usage.</description>
+	<url>/reposize</url>
+	<authentication>user</authentication>
+	<format default="json" />
+	<transaction>none</transaction>
+</webscript>

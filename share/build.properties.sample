@@ -1,0 +1,5 @@
+project.name=reposize-dashlet-share
+module.id=com.tribloom.reposize.module
+alfresco.web.dir=/Users/cpaul/dev/new-stats-dashlet/tomcat-share/webapps/share
+alfresco.war.path=/Users/cpaul/dev/new-stats-dashlet/tomcat-share/webapps/share.war
+alfresco.mmt.dir=/Users/cpaul/dev/alfresco/4_0_0/alfresco-enterprise-4.0.0/bin

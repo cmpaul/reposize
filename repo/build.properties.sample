@@ -1,0 +1,7 @@
+project.name=reposize-dashlet-repo
+module.id=com.tribloom.reposize.module.repository
+alfresco.sdk.dir=/Users/cpaul/dev/alfresco/3_4_7/alfresco-enterprise-sdk-3.4.7
+alfresco.sdk.server.dir=${alfresco.sdk.dir}/lib/server
+alfresco.sdk.remote.dir=${alfresco.sdk.dir}/lib/remote
+alfresco.web.dir=/Users/cpaul/dev/new-stats-dashlet/tomcat-alfresco/webapps/alfresco
+alfresco.war.path=/Users/cpaul/dev/new-stats-dashlet/tomcat-alfresco/webapps/alfresco.war
