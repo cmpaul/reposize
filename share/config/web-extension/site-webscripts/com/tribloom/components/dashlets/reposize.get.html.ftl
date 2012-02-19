@@ -21,7 +21,7 @@
     	<table id="${args.htmlid}-stats-reposize-table" class="reposize">
     		<tr>
    	   			<td rowspan="6" class="reposize-icon-column">
-    				<img src="${page.url.context}/res/tribloom/components/dashlets/reposize.jpg" />
+    				<img src="${page.url.context}/res/tribloom/components/dashlets/reposize.png" />
     			</td>
     			<td>&nbsp;</td>
     			<td class="header reposize-label-column"><h4 class="theme-color-2">${msg("label.source")}</h4></td>
