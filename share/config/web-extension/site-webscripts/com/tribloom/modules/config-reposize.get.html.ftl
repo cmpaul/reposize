@@ -3,7 +3,7 @@
     <div class="bd">
         <form id="${args.htmlid}-form" action="" method="POST">
             <div class="yui-gd">
-                <div class="yui-u first"><label for="${args.htmlid}-viewType">${msg("label.refreshInterval")}:</label></div>
+                <div class="yui-u first"><label for="${args.htmlid}-refreshInterval">${msg("label.refreshInterval")}:</label></div>
                 <div class="yui-u">
                     <select id="${args.htmlid}-refreshInterval" name="refreshInterval">
                     	<option value="-1">${msg("label.refreshInterval.off")}</option>
