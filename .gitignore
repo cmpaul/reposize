@@ -1,4 +1,5 @@
 *-min.js
 .DS_Store
 bin/
+build/
 build.properties
