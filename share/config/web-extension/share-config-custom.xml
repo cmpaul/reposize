@@ -12,10 +12,10 @@
 
 	<config replace="true">
 		<flags>
-			Developer debugging setting to turn on DEBUG mode for client scripts in the browser - do not use in production!
-			<client-debug>true</client-debug>
-			LOGGING can always be toggled at runtime when in DEBUG mode (Ctrl, Ctrl, Shift, Shift). This flag automatically 
-				activates logging on page load. - do not use in production!
+			<!-- Developer debugging setting to turn on DEBUG mode for client scripts in the browser - do not use in production! -->
+			<client-debug>false</client-debug>
+			<!-- LOGGING can always be toggled at runtime when in DEBUG mode (Ctrl, Ctrl, Shift, Shift). This flag automatically 
+				activates logging on page load. - do not use in production! -->
 			<client-debug-autologging>false</client-debug-autologging>
 		</flags>
 	</config>
