@@ -16,7 +16,11 @@
     <div class="title">${msg("label.header")}</div>
     <div class="body scrollable reposize-body">
    		<div class="toolbar">
-            <a id="${args.htmlid}-configReposize-link" class="configure theme-color-1" href="#">${msg("label.configure")}</a>
+   			<span class="align-left yui-button-align">
+   				<span class="first-child">
+            		<a id="${args.htmlid}-configReposize-link" class="theme-color-1" href="#">${msg("label.configure")}</a>
+            	</span>
+            </span>
         </div>
     	<table id="${args.htmlid}-stats-reposize-table" class="reposize">
     		<tr>
