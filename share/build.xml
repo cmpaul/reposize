@@ -54,6 +54,9 @@
 	
 	<target name="package-amp" depends="setup" description="Packages the customizations as an Alfresco module in ${package.file.amp}">
 		<delete file="${package.file.amp}" />
+        <yuicompress fromdir="${web.dir}" todir="${web.dir}" excludes="**/*-min.js" warn="${yuicompress.warn}">
+            <include name="**/*.js" />
+        </yuicompress>
 		<zip destfile="${package.file.amp}">
 			<zipfileset file="${package.file.jar}" prefix="lib" />
 			<zipfileset dir="${web.dir}" prefix="web" />
