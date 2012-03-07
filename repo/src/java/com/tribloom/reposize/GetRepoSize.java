@@ -49,6 +49,10 @@ public class GetRepoSize extends DeclarativeWebScript {
 	@Override
 	protected Map<String, Object> executeImpl(WebScriptRequest req,
 			Status status, Cache cache) {
+		if (logger.isDebugEnabled()) {
+			logger.debug("Entering GetRepoSize.executeImpl()");
+		}
+		
 		Map<String, Object> model = new HashMap<String, Object>();
 
 		// Use Apache Configuration library to perform variable interpolation if
@@ -60,6 +64,12 @@ public class GetRepoSize extends DeclarativeWebScript {
 		String contentStore = (String) intConfig.getProperty("dir.contentstore");
 		String indexes = (String) intConfig.getProperty("dir.indexes");
 		String indexesBackup = (String) intConfig.getProperty("dir.indexes.backup");
+		
+		if (logger.isDebugEnabled()) {
+			logger.debug(" contentStorePath = " + contentStore);
+			logger.debug(" indexes = " + indexes);
+			logger.debug(" indexesBackup = " + indexesBackup);
+		}
 
 		try {
 			/**
@@ -81,23 +91,15 @@ public class GetRepoSize extends DeclarativeWebScript {
 			long contentStoreSize = getFileSize(new File(contentStore));
 			
 			if (logger.isDebugEnabled()) {
-				logger.debug(" contentStorePath = " + contentStore);
 				logger.debug(" contentStoreSize = " + contentStoreSize);
-				if (storeTotalSpace - storeFreeSpace == contentStoreSize) {
-					logger.debug(" Size verified!");
-				} else {
-					logger.debug(" Size not verified: " + storeTotalSpace + " - " + storeFreeSpace + " != " + contentStoreSize);
-				}
 			}
 			
 			long indexesSize = getFileSize(new File(indexes));
 			long indexesBackupSize = getFileSize(new File(indexesBackup));
 			
 			if (logger.isDebugEnabled()) {
-				logger.debug("  indexes = " + indexes);
-				logger.debug("  indexesSize = " + indexesSize);
-				logger.debug("  indexesBackup = " + indexesBackup);
-				logger.debug("  indexesBackupSize = " + indexesBackupSize);
+				logger.debug(" indexesSize = " + indexesSize);
+				logger.debug(" indexesBackupSize = " + indexesBackupSize);
 			}
 
 			model.put("contentStorePath", contentStore);
@@ -110,12 +112,16 @@ public class GetRepoSize extends DeclarativeWebScript {
 			model.put("indexesBackupSize", indexesBackupSize);
 
 		} catch (Exception e) {
+			logger.error("Exception encountered during GetRepoSize webscript processing: ", e);
 			status.setCode(Status.STATUS_INTERNAL_SERVER_ERROR);
 			status.setException(e);
 			status.setMessage(e.getMessage());
 			status.setRedirect(false);
 		}
 
+		if (logger.isDebugEnabled()) {
+			logger.debug("Exiting GetRepoSize.executeImpl()");
+		}
 		return model;
 	}
 
@@ -124,18 +130,19 @@ public class GetRepoSize extends DeclarativeWebScript {
 	 * calculated. If it is a folder, we recurse further.
 	 */
 	public long getFileSize(File folder) {
-
 		if (logger.isDebugEnabled()) {
 			logger.debug("Processing " + folder.getAbsolutePath());
 		}
 		long foldersize = 0;
 
 		File[] filelist = folder.listFiles();
-		for (int i = 0; i < filelist.length; i++) {
-			if (filelist[i].isDirectory()) {
-				foldersize += getFileSize(filelist[i]);
-			} else {
-				foldersize += filelist[i].length();
+		if (filelist != null) {
+			for (int i = 0; i < filelist.length; i++) {
+				if (filelist[i].isDirectory()) {
+					foldersize += getFileSize(filelist[i]);
+				} else {
+					foldersize += filelist[i].length();
+				}
 			}
 		}
 

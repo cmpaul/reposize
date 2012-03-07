@@ -3,3 +3,5 @@
 bin/
 build/
 build.properties
+alf_data/
+tomcat/
